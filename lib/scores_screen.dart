@@ -48,13 +48,9 @@ class _PuntuacionesGuardadasScreenState
     return Scaffold(
       appBar: AppBar(
         title: const Text('Top 10 de las mejores puntuaciones'),
+        backgroundColor: Colors.red[700], // Color de la barra de navegación
       ),
-      body: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Dos celdas por fila
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
-        ),
+      body: ListView.builder(
         itemCount: puntuacionesGuardadas.length,
         itemBuilder: (context, index) {
           final puntuacion = puntuacionesGuardadas[index];
@@ -63,19 +59,21 @@ class _PuntuacionesGuardadasScreenState
 
           return Card(
             elevation: 4,
+            color: Colors.red[200], // Color del fondo del Card
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     nombre,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16.0,
+                      color: Colors.white, // Color del texto del nombre
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -83,6 +81,7 @@ class _PuntuacionesGuardadasScreenState
                     'Puntuación: $puntaje',
                     style: const TextStyle(
                       fontSize: 14.0,
+                      color: Colors.white, // Color del texto del puntaje
                     ),
                   ),
                 ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'show_images_screen.dart';
+import 'random_img_order.dart';
 
 class NameScreen extends StatefulWidget {
   const NameScreen({Key? key}) : super(key: key);
@@ -59,7 +59,7 @@ class _NombreScreenState extends State<NameScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ShowImagesScreen(nombre: nombre),
+                    builder: (context) => RandomImgOrder(nombre: nombre),
                   ),
                 );
               },

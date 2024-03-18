@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'scores_screen.dart';
 
 class ImgListOrder extends StatefulWidget {
   final String nombre;
@@ -141,9 +142,12 @@ class _RandomImgOrderScreenState extends State<ImgListOrder> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Aquí puedes agregar la lógica para verificar el orden de las imágenes si lo deseas
-                  // Y puedes navegar a la pantalla de puntuación si lo consideras necesario
-                  // Por el momento, dejé este botón sin funcionalidad
+                  // Navegar a la pantalla de puntuaciones
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PuntuacionesGuardadasScreen()),
+                  );
                 },
                 child: const Text(
                   'Ver Puntuación',

@@ -25,16 +25,16 @@ class _PuntuacionesGuardadasScreenState
 
   Future<void> _cargarPuntuacionesGuardadas() async {
     final response = await client
-        .from('users')
+        .from('usuarios')
         .select()
-        .order('user_point', ascending: false)
+        .order('puntos', ascending: false)
         .limit(10);
 
     final List<dynamic> data = response;
     List<Puntuacion> puntuaciones = data
         .map((item) => Puntuacion(
-              nombre: item['user_name'] as String,
-              puntaje: item['user_point'] as int,
+              nombre: item['nombre'] as String,
+              puntaje: item['puntos'] as int,
             ))
         .toList();
 
